@@ -68,6 +68,7 @@ code {
 }
 
 .panier-content {
+  background-color: white;
   box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
 }
 
@@ -160,9 +161,51 @@ code {
 }
 
 .sum-content {
-  width: inherit;
-  border-top: 1px solid black;
+  width: 20rem;
   text-align: left;
-  padding-left: 10px;
   background-color: white;
+  padding: 1rem 0rem 1rem 1rem;
+}
+
+.product-sum {
+  display: flex;
+  flex-wrap: wrap;
+}
+.product-sum p {
+  flex: 1;
+}
+
+.product-sum span {
+  margin: 10px 0px 10px 30px;
+}
+
+.delivery-sum {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.delivery-sum p {
+  flex: 1;
+}
+
+.delivery-sum span {
+  margin: 10px 0px 10px 30px;
+}
+
+.barre-basket {
+  border-top: 2px solid #d5dada;
+}
+
+.total-sum {
+  width: inherit;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.total-sum p {
+  flex: 1;
+}
+
+.total-sum span {
+  margin: 10px 0px 10px 30px;
 }
