@@ -12,3 +12,157 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* CSS HEADER  */
+
+.header {
+  margin: auto;
+  width: 1024px;
+  height: 200px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.barre-logo {
+  height: 5rem;
+  border-bottom: 2px solid #f8f8f8;
+}
+.logo {
+  width: 150px;
+  margin-right: 900px;
+}
+
+.restaurant-presentation {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.image-restaurant img {
+  height: 150px;
+  width: 300px;
+  padding-left: 20px;
+}
+
+/* CSS MENU */
+
+.content-menu {
+  display: flex;
+  background-color: #f3f5f5;
+  margin: auto;
+  justify-content: center;
+}
+
+.cards {
+  width: 715px;
+
+  display: flex;
+}
+
+.panier {
+  background-color: white;
+  width: 25rem;
+  height: 150px;
+  padding: 0;
+  font-size: 12px;
+}
+
+.panier-content {
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+}
+
+.cards h2 {
+  text-align: left;
+  padding-left: 10px;
+}
+.container-test {
+  width: inherit;
+}
+
+.meals {
+  width: inherit;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.meals li {
+  background-color: white;
+  width: 300px;
+  height: 150px;
+  display: flex;
+  text-align: left;
+  margin: auto;
+  font-size: 12px;
+  margin-top: 10px;
+}
+/* .meals li:last-child {
+  align-items: left;
+} */
+
+.meals li:hover {
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+}
+
+.text-meals {
+  width: 300px;
+  padding-left: 10px;
+}
+
+.meals img {
+  width: 100px;
+  height: 100px;
+  border-radius: 2px;
+  padding: 30px 10px 0 25px;
+}
+
+/* CSS PANIER  */
+
+.basket-content {
+  background-color: white;
+  display: flex;
+  padding-left: 10px;
+}
+
+.basket-content p {
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 13px;
+}
+
+.price-item {
+  text-align: end;
+}
+.fas {
+  font-size: 20px;
+  color: #00ccbc;
+  padding: 10px 5px 0px 5px;
+}
+
+.button-basket {
+  background-color: #00ccbc;
+  width: 22rem;
+  height: 3rem;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  border: 0;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.empty-basket {
+  padding: 0;
+  margin: 0;
+  width: 200px;
+  height: 100px;
+  background-color: white;
+}
+
+.sum-content {
+  width: inherit;
+  border-top: 1px solid black;
+  text-align: left;
+  padding-left: 10px;
+  background-color: white;
+}
