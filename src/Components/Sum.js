@@ -15,7 +15,7 @@ const Sum = props => {
       <div className="barre-basket" />
       <div className="total-sum">
         <p>Total</p>
-        <span>{Number(props.total + 2.5).toFixed(2)}€</span>
+        <span>{Number(props.total + 2.5).toFixed(2)} €</span>
       </div>
     </div>
   );
