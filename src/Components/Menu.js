@@ -22,9 +22,9 @@ const Menu = props => {
       <div className="panier">
         <Panier
           products={props.products}
-          counter={props.counter}
           onAdd={props.onAdd}
           onRemove={props.onRemove}
+          total={props.total}
         />
       </div>
     </div>

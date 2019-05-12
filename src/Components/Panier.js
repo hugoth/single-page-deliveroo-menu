@@ -24,7 +24,7 @@ const Panier = props => {
               );
             })}
           </div>
-          <Sum />
+          <Sum total={props.total} />
         </div>
       )}
     </div>

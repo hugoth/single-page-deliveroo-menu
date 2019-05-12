@@ -13,7 +13,7 @@ class Restaurant extends Component {
 
   handleAddItem = item => {
     const newTab = [...this.state.products];
-
+    let newTotal = this.state.total;
     const index = newTab.findIndex(x => {
       return x.id === item.id;
     });
@@ -28,11 +28,15 @@ class Restaurant extends Component {
         value: 1
       };
       newTab.unshift(newProduct);
+      newTotal += Number(item.price);
     } else {
       newTab[index].value = newTab[index].value + 1;
+      newTotal += Number(newTab[index].price);
     }
+
     this.setState({
-      products: newTab
+      products: newTab,
+      total: newTotal
     });
   };
 
@@ -40,31 +44,29 @@ class Restaurant extends Component {
     const newTab = [...this.state.products];
     const index = newTab.indexOf(item);
     console.log(index);
-
     newTab[index].value++;
+
+    const newTotal = this.state.total + Number(newTab[index].price);
+
     this.setState({
-      products: newTab
+      products: newTab,
+      total: newTotal
     });
   };
 
   handleRemoveQuantity = item => {
     const newTab = [...this.state.products];
     const index = newTab.indexOf(item);
+    let newTotal = this.state.total;
     if (newTab[index].value > 0) {
       newTab[index].value--;
+      newTotal = newTotal - Number(newTab[index].price);
     }
 
     this.setState({
-      counter: newTab
+      counter: newTab,
+      total: newTotal
     });
-  };
-
-  handleFindTotal = () => {
-    const newTab = [...this.state.products];
-    const total = newTab.forEach(item => {
-      return item.price * item.value;
-    });
-    console.log(total);
   };
 
   render() {
@@ -75,6 +77,7 @@ class Restaurant extends Component {
         <Menu
           data={this.state.menus}
           products={this.state.products}
+          total={this.state.total}
           onClick={this.handleAddItem}
           onAdd={this.handleAddQuantity}
           onRemove={this.handleRemoveQuantity}
