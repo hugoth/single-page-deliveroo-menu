@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import Header from "./Header";
 import Menu from "./Menu";
 import axios from "axios";
+import { Spinner } from "evergreen-ui";
 
 class Restaurant extends Component {
   state = {
+    isloaded: false,
     restaurant: {},
     menus: {},
     products: [],
@@ -71,6 +73,20 @@ class Restaurant extends Component {
   };
 
   render() {
+    if (this.state.isloaded === false) {
+      return (
+        // <Pane
+        //   display="flex"
+        //   alignItems="center"
+        //   justifyContent="center"
+        //   height={400}
+        // >
+        <div id="Spinner">
+          <Spinner size={70} />
+        </div>
+        // </Pane>
+      );
+    }
     return (
       <div className="App">
         <Header state={this.state} />
@@ -90,11 +106,12 @@ class Restaurant extends Component {
   }
 
   async componentDidMount() {
-    const response = await axios.get("https://deliveroo-api.now.sh/menu");
-
-    this.setState({
-      restaurant: response.data.restaurant,
-      menus: response.data.menu
+    await axios.get("https://deliveroo-api.now.sh/menu").then(response => {
+      this.setState({
+        restaurant: response.data.restaurant,
+        menus: response.data.menu,
+        isloaded: true
+      });
     });
   }
 }

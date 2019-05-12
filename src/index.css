@@ -230,3 +230,10 @@ code {
 #font-price {
   font-size: 15px;
 }
+
+#Spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+}
