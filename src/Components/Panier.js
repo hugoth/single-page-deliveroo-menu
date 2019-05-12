@@ -7,6 +7,7 @@ const Panier = props => {
     <div>
       {props.total === 0 ? (
         <div className="empty-basket">
+          <button className="button-empty-basket"> Valider mon panier</button>
           <h4>Le panier est vide</h4>
         </div>
       ) : (

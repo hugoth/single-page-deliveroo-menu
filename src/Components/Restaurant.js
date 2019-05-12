@@ -75,16 +75,9 @@ class Restaurant extends Component {
   render() {
     if (this.state.isloaded === false) {
       return (
-        // <Pane
-        //   display="flex"
-        //   alignItems="center"
-        //   justifyContent="center"
-        //   height={400}
-        // >
         <div id="Spinner">
           <Spinner size={70} />
         </div>
-        // </Pane>
       );
     }
     return (
