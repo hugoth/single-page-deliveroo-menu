@@ -6,7 +6,7 @@ const Sum = props => {
       <div className="barre-basket" />
       <div className="product-sum">
         <p>Sous-total </p>
-        <span>{props.total} €</span>
+        <span>{Number(props.total).toFixed(2)} €</span>
       </div>
       <div className="delivery-sum">
         <p>Frais de livraison</p>
@@ -15,7 +15,7 @@ const Sum = props => {
       <div className="barre-basket" />
       <div className="total-sum">
         <p>Total</p>
-        <span>{props.total + 2.5}€</span>
+        <span>{Number(props.total + 2.5).toFixed(2)}€</span>
       </div>
     </div>
   );

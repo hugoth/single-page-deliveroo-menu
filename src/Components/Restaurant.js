@@ -8,17 +8,19 @@ class Restaurant extends Component {
     restaurant: {},
     menus: {},
     products: [],
-    total: null
+    total: 0
   };
 
   handleAddItem = item => {
+    let number = Number(item.price) + 0.444;
+    console.log(number);
+    console.log(Number(number.toFixed(2)));
+
     const newTab = [...this.state.products];
     let newTotal = this.state.total;
     const index = newTab.findIndex(x => {
       return x.id === item.id;
     });
-    console.log(item);
-    console.log(index);
 
     if (index < 0) {
       const newProduct = {
@@ -43,10 +45,9 @@ class Restaurant extends Component {
   handleAddQuantity = item => {
     const newTab = [...this.state.products];
     const index = newTab.indexOf(item);
-    console.log(index);
     newTab[index].value++;
 
-    const newTotal = this.state.total + Number(newTab[index].price);
+    let newTotal = this.state.total + Number(newTab[index].price);
 
     this.setState({
       products: newTab,
@@ -74,15 +75,16 @@ class Restaurant extends Component {
       <div className="App">
         <Header state={this.state} />
 
-        <Menu
-          data={this.state.menus}
-          products={this.state.products}
-          total={this.state.total}
-          onClick={this.handleAddItem}
-          onAdd={this.handleAddQuantity}
-          onRemove={this.handleRemoveQuantity}
-        />
-        <button onClick={this.handleFindTotal} />
+        <div className="content-h">
+          <Menu
+            data={this.state.menus}
+            products={this.state.products}
+            total={this.state.total}
+            onClick={this.handleAddItem}
+            onAdd={this.handleAddQuantity}
+            onRemove={this.handleRemoveQuantity}
+          />
+        </div>
       </div>
     );
   }

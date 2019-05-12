@@ -5,9 +5,9 @@ import Sum from "./Sum";
 const Panier = props => {
   return (
     <div>
-      {props.products.length < 1 ? (
-        <div>
-          <h3>Le panier est vide</h3>
+      {props.total === 0 ? (
+        <div className="empty-basket">
+          <h4>Le panier est vide</h4>
         </div>
       ) : (
         <div className="panier-content">
