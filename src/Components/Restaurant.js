@@ -65,7 +65,7 @@ class Restaurant extends Component {
     }
 
     this.setState({
-      counter: newTab,
+      products: newTab,
       total: newTotal
     });
   };

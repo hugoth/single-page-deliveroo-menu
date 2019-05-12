@@ -22,7 +22,18 @@ const Meals = props => {
                 basedOn="letters"
               />
 
-              <p>{meal.price}</p>
+              <div className="popular">
+                <p id="font-price">{meal.price}</p>
+                <div>
+                  {meal.popular ? (
+                    <p id="popular">
+                      <i class="fas fa-star" /> Populaire
+                    </p>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              </div>
             </div>
 
             <div>

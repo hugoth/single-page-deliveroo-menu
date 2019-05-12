@@ -211,3 +211,22 @@ code {
   margin: 10px 0px 10px 30px;
   padding-right: 20px;
 }
+
+.popular {
+  display: flex;
+}
+.popular i {
+  color: #ff7f02;
+  font-size: 12px;
+  margin: 0;
+  padding: 19px 0px 0px 5px;
+}
+
+#popular {
+  color: #ff7f02;
+  margin: 0;
+}
+
+#font-price {
+  font-size: 15px;
+}
