@@ -80,6 +80,7 @@ code {
   width: inherit;
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
 }
 
 .meals li {
@@ -92,9 +93,6 @@ code {
   font-size: 12px;
   margin-top: 10px;
 }
-/* .meals li:last-child {
-  align-items: left;
-} */
 
 .meals li:hover {
   box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);

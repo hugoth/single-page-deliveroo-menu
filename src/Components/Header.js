@@ -13,13 +13,13 @@ const Header = props => {
       <div className="header">
         <div className="restaurant-presentation">
           <div className="text-restaurant">
-            <h2>Le Pain Quotidien - Montorgueil</h2>
-            <p>
-              Profitez de chaque plaisir de la vie quotidienne. Le Pain
-              Quotidien propose des ingrédients simples et sains, du bon pain,
-              des fruits et des légumes frais et de saison issus de
-              l’agriculture biologique.
-            </p>
+            {props.restaurant ? (
+              <h2>{props.restaurant.name}</h2>
+            ) : (
+              <div>En chargement...</div>
+            )}
+
+            {props.restaurant ? <p>{props.restaurant.description}</p> : ""}
           </div>
           <div className="image-restaurant">
             <img

@@ -82,7 +82,7 @@ class Restaurant extends Component {
     }
     return (
       <div className="App">
-        <Header state={this.state} />
+        <Header restaurant={this.state.restaurant} />
 
         <div className="content-h">
           <Menu
