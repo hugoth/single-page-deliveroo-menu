@@ -14,10 +14,6 @@ class Restaurant extends Component {
   };
 
   handleAddItem = item => {
-    let number = Number(item.price) + 0.444;
-    console.log(number);
-    console.log(Number(number.toFixed(2)));
-
     const newTab = [...this.state.products];
     let newTotal = this.state.total;
     const index = newTab.findIndex(x => {

@@ -27,7 +27,7 @@ const Meals = props => {
                 <div>
                   {meal.popular ? (
                     <p id="popular">
-                      <i class="fas fa-star" /> Populaire
+                      <i className="fas fa-star" /> Populaire
                     </p>
                   ) : (
                     ""

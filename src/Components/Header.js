@@ -34,9 +34,3 @@ const Header = props => {
 };
 
 export default Header;
-
-// <button
-// onClick={() => console.log(props.state.restaurant.restaurant.desci)}
-// >
-// test props
-// </button>
