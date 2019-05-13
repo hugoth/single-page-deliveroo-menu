@@ -9,8 +9,7 @@ class Restaurant extends Component {
     isloaded: false,
     restaurant: {},
     menus: {},
-    products: [],
-    total: 0
+    products: []
   };
 
   handleAddItem = item => {
@@ -28,15 +27,12 @@ class Restaurant extends Component {
         value: 1
       };
       newTab.unshift(newProduct);
-      newTotal += Number(item.price);
     } else {
       newTab[index].value = newTab[index].value + 1;
-      newTotal += Number(newTab[index].price);
     }
 
     this.setState({
-      products: newTab,
-      total: newTotal
+      products: newTab
     });
   };
 
@@ -45,26 +41,24 @@ class Restaurant extends Component {
     const index = newTab.indexOf(item);
     newTab[index].value++;
 
-    let newTotal = this.state.total + Number(newTab[index].price);
-
     this.setState({
-      products: newTab,
-      total: newTotal
+      products: newTab
     });
   };
 
   handleRemoveQuantity = item => {
     const newTab = [...this.state.products];
     const index = newTab.indexOf(item);
-    let newTotal = this.state.total;
     if (newTab[index].value > 0) {
       newTab[index].value--;
-      newTotal = newTotal - Number(newTab[index].price);
     }
 
+    const tabnotzero = newTab.filter(item => {
+      item.value > 0;
+    });
+
     this.setState({
-      products: newTab,
-      total: newTotal
+      products: tabnotzero
     });
   };
 
@@ -84,7 +78,6 @@ class Restaurant extends Component {
           <Menu
             data={this.state.menus}
             products={this.state.products}
-            total={this.state.total}
             onClick={this.handleAddItem}
             onAdd={this.handleAddQuantity}
             onRemove={this.handleRemoveQuantity}

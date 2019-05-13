@@ -24,7 +24,6 @@ const Menu = props => {
           products={props.products}
           onAdd={props.onAdd}
           onRemove={props.onRemove}
-          total={props.total}
         />
       </div>
     </div>
