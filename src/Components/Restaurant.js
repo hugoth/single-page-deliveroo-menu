@@ -14,7 +14,6 @@ class Restaurant extends Component {
 
   handleAddItem = item => {
     const newTab = [...this.state.products];
-    let newTotal = this.state.total;
     const index = newTab.findIndex(x => {
       return x.id === item.id;
     });
@@ -49,16 +48,15 @@ class Restaurant extends Component {
   handleRemoveQuantity = item => {
     const newTab = [...this.state.products];
     const index = newTab.indexOf(item);
+
     if (newTab[index].value > 0) {
       newTab[index].value--;
+    } else {
+      newTab.splice(index, 1);
     }
 
-    const tabnotzero = newTab.filter(item => {
-      item.value > 0;
-    });
-
     this.setState({
-      products: tabnotzero
+      products: newTab
     });
   };
 

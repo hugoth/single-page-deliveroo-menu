@@ -5,7 +5,7 @@ import Sum from "./Sum";
 const Panier = props => {
   return (
     <div>
-      {props.total === 0 ? (
+      {props.products.length === 0 ? (
         <div className="empty-basket">
           <button className="button-empty-basket"> Valider mon panier</button>
           <h4>Le panier est vide</h4>
